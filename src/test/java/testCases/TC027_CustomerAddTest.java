@@ -2,6 +2,7 @@ package testCases;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 
 import pageObjects.CouponsAddPage;
 import pageObjects.HomePage;
@@ -9,10 +10,9 @@ import pageObjects.LoginPage;
 import pageObjects.UsersPage;
 import testBase.BaseClass;
 
-public class TC022_AdministratorsEditTest extends BaseClass{
-
+public class TC027_CustomerAddTest extends BaseClass{
 	@Test()
-	public void administratorsedit() {
+	public void customerAdd() {
 
 		try {
 
@@ -30,20 +30,28 @@ public class TC022_AdministratorsEditTest extends BaseClass{
 
 			// UsersPage Page
 			UsersPage usersPage = new UsersPage(driver);
-			usersPage.clickAdministrator();
-			usersPage.chooseNameToEdit();
-			usersPage.setName(p.getProperty("updateAdministratorsName"));
-			Thread.sleep(5000);
+			usersPage.clickCustomer();
+			usersPage.clickCustomerBtn();
+			usersPage.setName(p.getProperty("customerName"));
+			usersPage.setEmail(p.getProperty("customerEmail"));
+			usersPage.setPhone(p.getProperty("customerPhone"));
+			usersPage.activeBtn();
+			usersPage.setPassword(p.getProperty("password"));
+			usersPage.setPasswordConfirmation(p.getProperty("confirmPassword"));
+			
+
 			// Coupons Page
 			CouponsAddPage couponsPage = new CouponsAddPage(driver);
 			couponsPage.clickSaveBtn();
 
 			// Assert
 			String expectedName = usersPage.getNameTxt();
-			String originalItemName = "Jensen";
+			String originalItemName = "Custom Halal";
 			System.out.println("Extracted Text: " + expectedName);
 
-			Assert.assertEquals(expectedName, originalItemName, "Administrators not found successfully");
+			Assert.assertEquals(expectedName, originalItemName, "Customers wasn't found successfully");
+			
+			
 
 		} catch (Exception e) {
 			// Logs the exception for debugging
@@ -52,5 +60,5 @@ public class TC022_AdministratorsEditTest extends BaseClass{
 
 		}
 	}
-
+	
 }

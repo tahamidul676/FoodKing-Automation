@@ -9,10 +9,10 @@ import pageObjects.LoginPage;
 import pageObjects.UsersPage;
 import testBase.BaseClass;
 
-public class TC022_AdministratorsEditTest extends BaseClass{
+public class TC025_DeliveryBoyEditTest extends BaseClass{
 
 	@Test()
-	public void administratorsedit() {
+	public void deliveryBoyEdit() {
 
 		try {
 
@@ -30,20 +30,21 @@ public class TC022_AdministratorsEditTest extends BaseClass{
 
 			// UsersPage Page
 			UsersPage usersPage = new UsersPage(driver);
-			usersPage.clickAdministrator();
+			usersPage.clickDeliveryBoy();
 			usersPage.chooseNameToEdit();
-			usersPage.setName(p.getProperty("updateAdministratorsName"));
+			usersPage.setName(p.getProperty("updateDeliveryBoyName"));
 			Thread.sleep(5000);
+
 			// Coupons Page
 			CouponsAddPage couponsPage = new CouponsAddPage(driver);
 			couponsPage.clickSaveBtn();
 
 			// Assert
 			String expectedName = usersPage.getNameTxt();
-			String originalItemName = "Jensen";
+			String originalItemName = "Zero";
 			System.out.println("Extracted Text: " + expectedName);
 
-			Assert.assertEquals(expectedName, originalItemName, "Administrators not found successfully");
+			Assert.assertEquals(expectedName, originalItemName, "Delivery Boys wasn't found successfully");
 
 		} catch (Exception e) {
 			// Logs the exception for debugging
@@ -52,5 +53,5 @@ public class TC022_AdministratorsEditTest extends BaseClass{
 
 		}
 	}
-
+	
 }

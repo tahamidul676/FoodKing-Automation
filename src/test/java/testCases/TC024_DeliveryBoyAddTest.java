@@ -9,10 +9,10 @@ import pageObjects.LoginPage;
 import pageObjects.UsersPage;
 import testBase.BaseClass;
 
-public class TC022_AdministratorsEditTest extends BaseClass{
+public class TC024_DeliveryBoyAddTest extends BaseClass{
 
 	@Test()
-	public void administratorsedit() {
+	public void deliveryBoyAdd() {
 
 		try {
 
@@ -30,20 +30,26 @@ public class TC022_AdministratorsEditTest extends BaseClass{
 
 			// UsersPage Page
 			UsersPage usersPage = new UsersPage(driver);
-			usersPage.clickAdministrator();
-			usersPage.chooseNameToEdit();
-			usersPage.setName(p.getProperty("updateAdministratorsName"));
-			Thread.sleep(5000);
+			usersPage.clickDeliveryBoy();
+			usersPage.clickaddDeliveryBoyBtn();
+			usersPage.setName(p.getProperty("deliveryBoyName"));
+			usersPage.setEmail(p.getProperty("deliveryBoyEmail"));
+			usersPage.setPhone(p.getProperty("deliveryBoyPhone"));
+			usersPage.activeBtn();
+			usersPage.setPassword(p.getProperty("password"));
+			usersPage.setPasswordConfirmation(p.getProperty("confirmPassword"));
+			usersPage.allBranchBtn();
+
 			// Coupons Page
 			CouponsAddPage couponsPage = new CouponsAddPage(driver);
 			couponsPage.clickSaveBtn();
 
 			// Assert
 			String expectedName = usersPage.getNameTxt();
-			String originalItemName = "Jensen";
+			String originalItemName = "Zero";
 			System.out.println("Extracted Text: " + expectedName);
 
-			Assert.assertEquals(expectedName, originalItemName, "Administrators not found successfully");
+			Assert.assertEquals(expectedName, originalItemName, "Delivery Boys wasn't found successfully");
 
 		} catch (Exception e) {
 			// Logs the exception for debugging
