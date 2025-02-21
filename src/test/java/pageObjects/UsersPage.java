@@ -39,6 +39,22 @@ public class UsersPage extends BasePage {
 	@FindBy(xpath = "//input[@id='all_branch']")
 	WebElement radioAllBranch;
 
+	
+	@FindBy(xpath = "(//span[normalize-space()='Delivery Boys'])[1]")
+	WebElement linkDeliveryBoys;
+	@FindBy(xpath = "//span[normalize-space()='Add Delivery Boy']")
+	WebElement addDeliveryBoyBtn;
+	
+	@FindBy(xpath = "(//span[normalize-space()='Customers'])[1]")
+	WebElement linkCustomer;
+	@FindBy(xpath = "//span[normalize-space()='Add Customer']")
+	WebElement addCustomerBtn;
+	
+	@FindBy(xpath = "(//span[normalize-space()='Employees'])[1]")
+	WebElement linkEmployee;
+	@FindBy(xpath = "//span[normalize-space()='Add Employee']")
+	WebElement addEmployeeBtn;
+	
 	// Explicit waits
 	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
@@ -85,7 +101,7 @@ public class UsersPage extends BasePage {
 	public String getNameTxt() {
 		return wait
 				.until(ExpectedConditions
-						.presenceOfElementLocated(By.xpath("//td[contains(normalize-space(), \"Elon Musk\")]")))
+						.presenceOfElementLocated(By.xpath("//td[contains(normalize-space(), \"Miron\")]")))
 				.getText();
 
 	}
@@ -94,7 +110,7 @@ public class UsersPage extends BasePage {
 
 	public void chooseNameToEdit() {
 
-		String administratorsName = "Elon Musk";
+		String administratorsName = "Custom Halal";
 		boolean administratorsFound = false;
 
 		// Locate all rows in the table
@@ -119,6 +135,26 @@ public class UsersPage extends BasePage {
 			System.out.println("Administrators not found!");
 		}
 
+	}
+	
+	// Delivery Boy Add
+	
+	public void clickDeliveryBoy() {
+		wait.until(ExpectedConditions.elementToBeClickable(linkDeliveryBoys)).click();
+	}
+
+	public void clickaddDeliveryBoyBtn() {
+		wait.until(ExpectedConditions.elementToBeClickable(addDeliveryBoyBtn)).click();
+	}
+	
+	// Customer Add
+	
+	public void clickCustomer() {
+		wait.until(ExpectedConditions.elementToBeClickable(linkCustomer)).click();
+	}
+
+	public void clickCustomerBtn() {
+		wait.until(ExpectedConditions.elementToBeClickable(addCustomerBtn)).click();
 	}
 
 }
