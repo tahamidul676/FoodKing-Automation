@@ -101,7 +101,7 @@ public class UsersPage extends BasePage {
 	public String getNameTxt() {
 		return wait
 				.until(ExpectedConditions
-						.presenceOfElementLocated(By.xpath("//td[contains(normalize-space(), \"Miron\")]")))
+						.presenceOfElementLocated(By.xpath("//td[contains(normalize-space(), \"Elon Musk\")]")))
 				.getText();
 
 	}
