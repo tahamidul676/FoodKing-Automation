@@ -10,7 +10,7 @@ import testBase.BaseClass;
 
 public class TC030_EmployeeAddTest extends BaseClass{
 
-	public void employeeAdd() {
+	public void employeeAdd() { // Test
 
 		try {
 
