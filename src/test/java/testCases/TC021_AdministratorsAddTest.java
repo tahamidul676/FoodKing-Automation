@@ -13,7 +13,7 @@ import pageObjects.UsersPage;
 import testBase.BaseClass;
 
 public class TC021_AdministratorsAddTest extends BaseClass {
-
+//retryAnalyzer = testCases.RetryAnalyzer.class
 	@Test()
 	public void administratorsAdd() {
 
