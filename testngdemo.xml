@@ -2,12 +2,14 @@
 
 <suite name="RetryFailedTests XML Suite" verbose="1">
 	<listeners>
-		<listener class-name="testCases.AnnotationTransformer" />
+		<listener class-name="utilities.AnnotationTransformer" />
 	</listeners>
-	
+
+
 	<test name="RetryMulitple">
 		<classes>
 			<class name="testCases.TC021_AdministratorsAddTest" />
+			<class name="testCases.TC024_DeliveryBoyAddTest" />
 		</classes>
 	</test>
 </suite>

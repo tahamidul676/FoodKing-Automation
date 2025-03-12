@@ -11,10 +11,13 @@ import pageObjects.OffersAddPage;
 import pageObjects.OffersDeletePage;
 import pageObjects.UsersPage;
 import testBase.BaseClass;
+import utilities.RetryCountIfFailed;
 
 public class TC021_AdministratorsAddTest extends BaseClass {
-//retryAnalyzer = testCases.RetryAnalyzer.class
+//retryAnalyzer = utilities.RetryAnalyzer.class
+
 	@Test()
+	//@RetryCountIfFailed(3)
 	public void administratorsAdd() {
 
 		try {
@@ -42,7 +45,7 @@ public class TC021_AdministratorsAddTest extends BaseClass {
 			usersPage.setPassword(p.getProperty("administratorsPassword"));
 			usersPage.setPasswordConfirmation(p.getProperty("administratorsConfirmPassword"));
 			usersPage.allBranchBtn();
-
+			
 			// Coupons Page
 			CouponsAddPage couponsPage = new CouponsAddPage(driver);
 			couponsPage.clickSaveBtn();
