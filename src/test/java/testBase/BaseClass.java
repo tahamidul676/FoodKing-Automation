@@ -35,7 +35,7 @@ public class BaseClass {
 	p.load(file);
 	
 	
-	//logger = LogManager.getLogger(this.getClass()); //For showing log4j2.xml
+	logger = LogManager.getLogger(this.getClass()); //For showing log4j2.xml
 	
 	
 		
