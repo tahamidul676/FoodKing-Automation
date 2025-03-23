@@ -46,6 +46,7 @@ public class TC021_AdministratorsAddTest extends BaseClass {
 			usersPage.setPassword(p.getProperty("administratorsPassword"));
 			usersPage.setPasswordConfirmation(p.getProperty("administratorsConfirmPassword"));
 			usersPage.allBranchBtn();
+			Thread.sleep(5000);
 			usersPage.clickSaveBtn();
 			
 		
