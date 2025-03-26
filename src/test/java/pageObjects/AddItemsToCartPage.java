@@ -7,8 +7,6 @@ import org.openqa.selenium.support.FindBy;
 
 public class AddItemsToCartPage extends BasePage  {
 
-	
-	
 	 public AddItemsToCartPage(WebDriver driver) {
 		super(driver);
 	}

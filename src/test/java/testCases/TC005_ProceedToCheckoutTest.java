@@ -24,17 +24,18 @@ public class TC005_ProceedToCheckoutTest extends BaseClass {
 		loginPage.setEmail(p.getProperty("email"));
 		loginPage.setPassword(p.getProperty("password"));
 		loginPage.clickLogin();
-
+        
 		// Search Page
 		SearchItemsPage searchPage = new SearchItemsPage(driver);
 		String getSearchText = p.getProperty("searchItems");
 		searchPage.setSearch(getSearchText);
-		
+		//Thread.sleep(3000);
 		// Add Items To Cart Page
 		AddItemsToCartPage addCartPage = new AddItemsToCartPage(driver);
 		addCartPage.setSearch();
 		addCartPage.setInstructions(p.getProperty("addInstructions"));
 		addCartPage.clickAddToCart();
+		//Thread.sleep(3000);
 		ProceedToCheckoutPage proceedCheckoutPage = new ProceedToCheckoutPage(driver);
 		proceedCheckoutPage.clickMyCart();
 		proceedCheckoutPage.clickTakeaway();
