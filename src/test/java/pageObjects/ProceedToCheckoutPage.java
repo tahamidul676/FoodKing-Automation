@@ -1,8 +1,12 @@
 package pageObjects;
 
+import java.time.Duration;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class ProceedToCheckoutPage extends BasePage {
 
@@ -18,24 +22,43 @@ public class ProceedToCheckoutPage extends BasePage {
 
 	@FindBy(xpath = "//a[normalize-space()='Proceed to Checkout']")
 	WebElement btnProceedToCheckout;
-
+	
 	@FindBy(xpath = "//button[normalize-space()='Place Order']")
 	WebElement btnPlaceOrder;
+	
+	@FindBy(xpath = "//h3[normalize-space()='Order Confirmed']")
+	WebElement getOrderConfirmText;
+
+	// Explicit waits
+	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
 	public void clickMyCart() {
-		btnMyCart.click();
+
+		wait.until(ExpectedConditions.elementToBeClickable(btnMyCart)).click();
+		 btnMyCart.click();
 	}
 
 	public void clickTakeaway() {
-		btnTakeaway.click();
+		
+		 btnTakeaway.click();
 	}
 
 	public void clickProceedToCheckout() {
-		btnProceedToCheckout.click();
+		
+		 btnProceedToCheckout.click();
 	}
 
 	public void clickPlaceOrder() {
-		btnPlaceOrder.click();
+		wait.until(ExpectedConditions.elementToBeClickable(btnPlaceOrder)).click();
+	}
+	
+	public String orderConfirmedText() {
+		try {
+			wait.until(ExpectedConditions.visibilityOf(getOrderConfirmText));
+			return getOrderConfirmText.getText();
+		} catch (Exception e) {
+			return "Order Confirm not found or text not visible";
+		}
 	}
 
 }

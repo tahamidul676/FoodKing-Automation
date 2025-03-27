@@ -10,8 +10,12 @@ import testBase.BaseClass;
 public class TC001_AccountRegistrationTest extends BaseClass {
 
 	@Test()
-	public void registrationOnAccount() throws InterruptedException {
+	public void registrationOnAccount()  {
 
+		logger.info("***** Starting TC001_AccountRegistrationTest *****");
+
+		try {
+		
 		HomePage homePage = new HomePage(driver);
 		homePage.clickLogin();
 
@@ -31,6 +35,14 @@ public class TC001_AccountRegistrationTest extends BaseClass {
 		registrationPage.setEmail(p.getProperty("email"));
 		registrationPage.setPassword(p.getProperty("password"));
 		registrationPage.clickSignupBtn();
+		
+		} catch (Exception e) {
+
+			logger.error("Test failed due to an exception", e);
+			Assert.fail("Test assertion failed due to an exception: " + e.getMessage());
+
+		}
+		logger.info("***** Finished TC001_AccountRegistrationTest *****");
 		
 	}
 }

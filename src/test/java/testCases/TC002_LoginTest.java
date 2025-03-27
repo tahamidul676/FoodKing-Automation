@@ -10,7 +10,7 @@ import testBase.BaseClass;
 
 public class TC002_LoginTest extends BaseClass {
 
-	@Test()
+	@Test(groups= {"EndToEnd"})
 	public void login() {
 
 		logger.info("***** Starting TC002_LoginTest *****");

@@ -25,7 +25,7 @@ public class BaseClass {
 	public Logger logger;
 	public Properties p;
 	
-	@BeforeClass()
+	@BeforeClass(groups= {"EndToEnd"})
 	
 	public void setup() throws IOException {
 		
@@ -48,7 +48,7 @@ public class BaseClass {
 	}
 	
 	
-	@AfterClass()
+	@AfterClass(groups= {"EndToEnd"})
 	public void tearDown() {
 		driver.quit();
 	}

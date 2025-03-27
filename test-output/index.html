@@ -50,7 +50,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\Tahamidul\AppData\Local\Temp\testng-eclipse--1887780315\testng-customsuite.xml</span>
+                    <span>C:\Users\Tahamidul\AppData\Local\Temp\testng-eclipse--3745148\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -103,7 +103,7 @@
                     <div class="method-list-content failed suite-Default_suite">
                       <span>
                         <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="testCases.TC005_ProceedToCheckoutTest" class="method navigator-link" hash-for-method="checkOut">checkOut</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="testCases.TC034_DinningTableQRScanTest" class="method navigator-link" hash-for-method="dinningTableQRScan">dinningTableQRScan</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-Default_suite -->
@@ -121,42 +121,17 @@
           <div class="suite-Default_suite-class-failed">
             <div class="main-panel-header rounded-window-top">
               <img src="failed.png"/>
-              <span class="class-name">testCases.TC005_ProceedToCheckoutTest</span>
+              <span class="class-name">testCases.TC034_DinningTableQRScanTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="checkOut">
-                  </a> <!-- checkOut -->
-                  <span class="method-name">checkOut</span>
-                  <div class="stack-trace">org.openqa.selenium.StaleElementReferenceException: stale element reference: stale element not found in the current frame
-  (Session info: chrome=134.0.6998.119)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
-Build info: version: &apos;4.28.0&apos;, revision: &apos;ac342546e9&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;23.0.2&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [b33a3739a1a6014007fc97127a7e8a55, clickElement {id=f.FCD31A504A221CAC8CFA683F88DFE901.d.5D50B5C442A288B8D5CE015989130CA5.e.145}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.119, chrome: {chromedriverVersion: 134.0.6998.165 (fd886e2cb29..., userDataDir: C:\Users\TAHAMI~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60064}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60064/devtoo..., se:cdpVersion: 134.0.6998.119, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (b33a3739a1a6014007fc97127a7e8a55)] -&gt; xpath: (//button[@class=&apos;product-card-list-cart-btn add-btn&apos;])[1]]
-Session ID: b33a3739a1a6014007fc97127a7e8a55
-	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
-	at jdk.proxy2/jdk.proxy2.$Proxy28.click(Unknown Source)
-	at pageObjects.AddItemsToCartPage.setSearch(AddItemsToCartPage.java:29)
-	at testCases.TC005_ProceedToCheckoutTest.checkOut(TC005_ProceedToCheckoutTest.java:35)
+                  <a name="dinningTableQRScan">
+                  </a> <!-- dinningTableQRScan -->
+                  <span class="method-name">dinningTableQRScan</span>
+                  <div class="stack-trace">java.lang.AssertionError: Test assertion failed due to an exception: Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator &apos;By.xpath: //img[@alt=&apos;qrcode&apos;]&apos; (tried for 10 second(s) with 500 milliseconds interval)
+	at org.testng.Assert.fail(Assert.java:111)
+	at testCases.TC034_DinningTableQRScanTest.dinningTableQRScan(TC034_DinningTableQRScanTest.java:54)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -192,7 +167,7 @@ Session ID: b33a3739a1a6014007fc97127a7e8a55
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\Tahamidul\AppData\Local\Temp\testng-eclipse--1887780315\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\Tahamidul\AppData\Local\Temp\testng-eclipse--3745148\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -201,7 +176,7 @@ Session ID: b33a3739a1a6014007fc97127a7e8a55
 &lt;suite name=&quot;Default suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Default test&quot; verbose=&quot;2&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;testCases.TC005_ProceedToCheckoutTest&quot;/&gt;
+      &lt;class name=&quot;testCases.TC034_DinningTableQRScanTest&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -243,14 +218,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'checkOut')
-data.setCell(0, 2, 'testCases.TC005_ProceedToCheckoutTest')
-data.setCell(0, 3, 644);
+data.setCell(0, 1, 'dinningTableQRScan')
+data.setCell(0, 2, 'testCases.TC034_DinningTableQRScanTest')
+data.setCell(0, 3, 26939);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 644 ms</span>
+              <span class="suite-total-time">Total running time: 26 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -276,7 +251,7 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">testCases.TC005_ProceedToCheckoutTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">testCases.TC034_DinningTableQRScanTest</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">setup</span>
                 <span class="method-start">0 ms</span>
@@ -284,12 +259,12 @@ return data;
               <div class="test-method">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">checkOut</span>
-                <span class="method-start">3490 ms</span>
+                <span class="method-name">dinningTableQRScan</span>
+                <span class="method-start">3124 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">4139 ms</span>
+                <span class="method-start">30067 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

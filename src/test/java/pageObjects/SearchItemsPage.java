@@ -17,8 +17,12 @@ public class SearchItemsPage extends BasePage {
 
 	@FindBy(xpath = "//input[@placeholder='Search']")
 	WebElement txtSearch;
+	
+	// Explicit waits
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
 	public void setSearch(String nameOfSearchItems) {
+		wait.until(ExpectedConditions.elementToBeClickable(txtSearch)).click();
 		txtSearch.sendKeys(nameOfSearchItems);
 		txtSearch.sendKeys(Keys.RETURN);
 	}

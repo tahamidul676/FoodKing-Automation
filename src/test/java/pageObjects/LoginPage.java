@@ -43,9 +43,7 @@ public class LoginPage extends BasePage{
 	}
 	
 	public void clickLogin() {
-		
 		wait.until(ExpectedConditions.elementToBeClickable(btnLogin)).click();
-		
 	}
 	
 	public String toaster() {

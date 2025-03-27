@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testCases.TC005_ProceedToCheckoutTest">
+      <class name="testCases.TC034_DinningTableQRScanTest">
         <methods>
           <include name="tearDown"/>
           <include name="setup"/>
-          <include name="checkOut"/>
+          <include name="dinningTableQRScan"/>
         </methods>
-      </class> <!-- testCases.TC005_ProceedToCheckoutTest -->
+      </class> <!-- testCases.TC034_DinningTableQRScanTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

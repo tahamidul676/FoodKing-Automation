@@ -32,14 +32,14 @@ public class TC004_AddItemsToCartTest extends BaseClass {
 			SearchItemsPage searchPage = new SearchItemsPage(driver);
 			String getSearchText = p.getProperty("searchItems");
 			searchPage.setSearch(getSearchText);
-			Thread.sleep(5000);
 			
 			// AddItemsToCartPage
 			AddItemsToCartPage addCartPage = new AddItemsToCartPage(driver);
 			addCartPage.setSearch();
 			addCartPage.setInstructions(p.getProperty("addInstructions"));
 			addCartPage.clickAddToCart();
-			Thread.sleep(5000);
+			
+			
 		} catch (Exception e) {
 			logger.error("Test failed due to an exception", e);
 			Assert.fail("Test assertion failed due to an exception: " + e.getMessage());
