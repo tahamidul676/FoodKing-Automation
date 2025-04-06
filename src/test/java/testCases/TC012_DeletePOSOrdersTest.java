@@ -28,11 +28,9 @@ public class TC012_DeletePOSOrdersTest extends BaseClass{
 		// POS Order Page
 		POSOrdersPage posOrdersPage = new POSOrdersPage(driver);
 		posOrdersPage.clickPOSOrders();
-	
-		// Delete POS Oder Page
-		DeletePOSOrdersPage deletePosOrdersPage = new DeletePOSOrdersPage(driver);
-		deletePosOrdersPage.clickDeletePOSOrders();
-		deletePosOrdersPage.clickDeleteYesPOSOrders();
+		posOrdersPage.chooseNameToDelete(p.getProperty("DeleteOrderID"));
+		//posOrdersPage.clickDeletePOSOrders();
+		posOrdersPage.clickDeleteYesPOSOrders();
 		
 		
 		

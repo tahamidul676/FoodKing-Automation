@@ -1,5 +1,6 @@
 package testCases;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import pageObjects.AccountRegistrationPage;
@@ -17,6 +18,10 @@ public class TC009_ChangePasswordTest extends BaseClass{
 	@Test()
 	public void changePassword() throws InterruptedException {
 
+		
+		logger.info("***** Starting TC009_ChangePasswordTest *****");
+
+		try {
 		// Home Page
 		HomePage homePage = new HomePage(driver);
 		homePage.clickLogin();
@@ -35,8 +40,16 @@ public class TC009_ChangePasswordTest extends BaseClass{
 		changePassword.setNewPassword(p.getProperty("newPassword"));
 		changePassword.setTypeNewPassword(p.getProperty("retypeNewPassword"));
 		//changePassword.clickChangePasswordbtn();
+		Thread.sleep(5000);
 
-		
+		} catch (Exception e) {
+
+			logger.error("Test failed due to an exception", e);
+			Assert.fail("Test assertion failed due to an exception: " + e.getMessage());
+
+		}
+
+		logger.info("***** Finished TC009_ChangePasswordTest *****");
 
 	}
 }

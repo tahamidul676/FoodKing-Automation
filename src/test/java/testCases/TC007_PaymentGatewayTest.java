@@ -1,5 +1,6 @@
 package testCases;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import pageObjects.AccountRegistrationPage;
@@ -13,8 +14,12 @@ public class TC007_PaymentGatewayTest extends BaseClass{
 
 	
 	
-	@Test()
-	public void payNow() throws InterruptedException {
+	@Test(groups= {"EndToEnd"})
+	public void payNow() {
+		
+		logger.info("***** Starting TC007_PaymentGatewayTest *****");
+
+		try {
 
 		// Home Page
 		HomePage homePage = new HomePage(driver);
@@ -37,9 +42,9 @@ public class TC007_PaymentGatewayTest extends BaseClass{
 		PaymentGatewayPage paymentpage = new PaymentGatewayPage(driver);
 		
 		paymentpage.clickPayNow();
-		Thread.sleep(7000);
+		//Thread.sleep(7000);
 		paymentpage.clickStripe();
-		Thread.sleep(7000);
+		//Thread.sleep(7000);
 		paymentpage.enterCardDetails(
 			    p.getProperty("testCardNumber"), 
 			    p.getProperty("testExpiryDate"), 
@@ -49,7 +54,14 @@ public class TC007_PaymentGatewayTest extends BaseClass{
 		
 		paymentpage.clickConfirm(); // Confirm the payment
 		
-		
+		} catch (Exception e) {
+
+			logger.error("Test failed due to an exception", e);
+			Assert.fail("Test assertion failed due to an exception: " + e.getMessage());
+
+		}
+
+		logger.info("***** Finished TC007_PaymentGatewayTest *****");
 		
 
 		

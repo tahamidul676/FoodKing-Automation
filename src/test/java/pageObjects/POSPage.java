@@ -1,9 +1,16 @@
 package pageObjects;
 
+import java.time.Duration;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import utilities.TokenGenerator;
 
 public class POSPage extends BasePage {
 
@@ -61,14 +68,17 @@ public class POSPage extends BasePage {
 	// Get Order Payment Type: from print(Dynamic xpath)
 	@FindBy(xpath = "//p[normalize-space(text())='Payment Type: Card']")
 	WebElement getPaymentTypeTxt;
+	
+	@FindBy(xpath = "//h4[normalize-space()='Token #%s']")
+	WebElement getTokenTxt;
+	
 
 //	@FindBy(xpath = "//input[@type='number']")
 //	WebElement getQuantityTxt;
 
-	
-	
-	
-	
+	// Explicit waits
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+
 
 	public void clickPOS() {
 		lnkPOS.click();
@@ -88,19 +98,21 @@ public class POSPage extends BasePage {
 
 	// Select customer dropdown
 	public void clickDropDown() {
-		selectDropDown.click();
+		wait.until(ExpectedConditions.elementToBeClickable(selectDropDown)).click();
+		//selectDropDown.click();
 	}
 
 	public void clickCustomerDropDown() {
-		selectCustomerDropDown.click();
+		wait.until(ExpectedConditions.elementToBeClickable(selectCustomerDropDown)).click();
+		//selectCustomerDropDown.click();
 	}
-
-	private static int counter = 1;
-
+	
+	// It will increment the token and stored in a .text file
 	public void setToken() {
-		txtToken.sendKeys(String.valueOf(counter));
-		counter++; // Increment for the next run
+	    String token = TokenGenerator.getNextToken();
+	    txtToken.sendKeys(token);
 	}
+
 
 	public String getItemsText() {
 		return getItemsTxt.getText();
@@ -111,7 +123,8 @@ public class POSPage extends BasePage {
 	}
 
 	public void selectPaymentMethodDropdown() {
-		selectCardDropdown.click();
+		wait.until(ExpectedConditions.elementToBeClickable(selectCardDropdown)).click();
+		//selectCardDropdown.click();
 	}
 
 	public void setLastDigitCard(String lastdigit) {
@@ -119,33 +132,23 @@ public class POSPage extends BasePage {
 	}
 
 	public void clickOrderBtn() {
-		btnOrder.click();
+		wait.until(ExpectedConditions.elementToBeClickable(btnOrder)).click();
+		//btnOrder.click();
 	}
 
 	public String getPrintOrderIDTxt() {
+		wait.until(ExpectedConditions.visibilityOf(getOrderIdTxt));
 		return getOrderIdTxt.getText();
 	}
 
 	public String getPrintPaymentTypeTxt() {
+		wait.until(ExpectedConditions.visibilityOf(getPaymentTypeTxt));
 		return getPaymentTypeTxt.getText();
 	}
-
 	
-	
-//	public Integer getQuantityText() { 
-//	    String text = getQuantityTxt.getText(); // Get text from the element
-//
-//	    if (text == null || text.trim().isEmpty()) { 
-//	        System.out.println("Warning: Quantity text is empty or null.");
-//	        return 0; // Return a default value (0) to prevent NumberFormatException
-//	    }
-//
-//	    try {
-//	        return Integer.parseInt(text.trim()); // Convert the cleaned text to an integer
-//	    } catch (NumberFormatException e) {
-//	        System.out.println("Error: Unable to parse quantity '" + text + "' as an integer.");
-//	        return 0; // Return default value if parsing fails
-//	    }
-//	}
+	public String getTokenNumberTxt() {
+		wait.until(ExpectedConditions.visibilityOf(getTokenTxt));
+		return getTokenTxt.getText();
+	}
 
 }

@@ -14,8 +14,11 @@ import testBase.BaseClass;
 public class TC010_POSTest extends BaseClass {
 
 	@Test()
-	public void pos() throws InterruptedException {
+	public void pos()  {
 
+		logger.info("***** Starting TC010_POSTest *****");
+
+		try {
 		// Home Page
 		HomePage homePage = new HomePage(driver);
 		homePage.clickLogin();
@@ -26,11 +29,10 @@ public class TC010_POSTest extends BaseClass {
 		loginPage.setPassword(p.getProperty("adminPassword"));
 		loginPage.clickLogin();
 		homePage.clickAccount();
+		homePage.clickDashboard();
 		
 		// POS Page
 		POSPage posPage = new POSPage(driver);
-		
-		homePage.clickDashboard();
 		posPage.clickPOS();
 		posPage.clickAddItemsBtn();
 		posPage.setSpecialInstruction(p.getProperty("addInstructions"));
@@ -53,15 +55,19 @@ public class TC010_POSTest extends BaseClass {
 		System.out.print("Print OrderID: " +printOrderId+"\n");
 		
 		String printPaymentType = posPage.getPrintPaymentTypeTxt();
-		System.out.print("Print PaymentType: " +printPaymentType+"\n");
+		System.out.print("Print " +printPaymentType+"\n");
 		
+//		String printTokenNumberType = posPage.getTokenNumberTxt();
+//		System.out.print("Print PaymentType: " +printTokenNumberType+"\n");	
 		
-//		Thread.sleep(5000);
-//		Integer itemsQuantity = pos.getQuantityText();
-//		System.out.print("Item Quantity Is: " +itemsQuantity);
-		
-		
-		
+		} catch (Exception e) {
+
+			logger.error("Test failed due to an exception", e);
+			Assert.fail("Test assertion failed due to an exception: " + e.getMessage());
+
+		}
+
+		logger.info("***** Finished TC010_POSTest *****");
 
 	}
 }

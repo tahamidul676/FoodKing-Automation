@@ -1,5 +1,6 @@
 package testCases;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import pageObjects.HomePage;
@@ -12,8 +13,13 @@ import testBase.BaseClass;
 public class TC011_POSOrdersTest extends BaseClass {
 
 	@Test()
-	public void posOrders() throws InterruptedException {
+	public void posOrders() {
 
+		
+		logger.info("***** Starting TC011_POSOrdersTest *****");
+
+		try {
+		
 		// Home Page
 		HomePage homePage = new HomePage(driver);
 		homePage.clickLogin();
@@ -29,11 +35,12 @@ public class TC011_POSOrdersTest extends BaseClass {
 		// POS Order Page
 		POSOrdersPage posOrdersPage = new POSOrdersPage(driver);
 		posOrdersPage.clickPOSOrders();
+		posOrdersPage.chooseNameToEdit(p.getProperty("OrderID"));
 		
 		String rowOrderId = posOrdersPage.getOrderIdTxt();
 		System.out.print("Order ID: "+rowOrderId+'\n');
 		Thread.sleep(5000);
-		posOrdersPage.clickViewPosOrdersBtn();
+		//posOrdersPage.clickViewPosOrdersBtn();
 		
 		// According to the Status
 		posOrdersPage.selectPaidPaymentDropDown();
@@ -41,6 +48,7 @@ public class TC011_POSOrdersTest extends BaseClass {
 		//posOrdersPage.selectAcceptOrderDropDown();
 		//posOrdersPage.selectProcessingOrderDropDown();
 		posOrdersPage.selectDeliveredOrderDropDown();
+		
 		
 		System.out.print("***Delivery Information***" +"\n");
 		
@@ -51,8 +59,15 @@ public class TC011_POSOrdersTest extends BaseClass {
 		String phone = posOrdersPage.getPosOrdersPhoneTxt();
 		System.out.print("Phone : "+phone+'\n');
 		
-		Thread.sleep(5000);
 		
+		
+		} catch (Exception e) {
 
+			logger.error("Test failed due to an exception", e);
+			Assert.fail("Test assertion failed due to an exception: " + e.getMessage());
+
+		}
+
+		logger.info("***** Finished TC011_POSOrdersTest *****");
 	}
 }

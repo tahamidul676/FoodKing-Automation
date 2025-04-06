@@ -14,7 +14,7 @@ import testBase.BaseClass;
 
 public class TC006_MyOrdersTest extends BaseClass {
 
-	@Test()
+	@Test(groups= {"EndToEnd"})
 	public void myOrders() {
 
 		logger.info("***** Starting TC006_MyOrdersTest *****");
@@ -35,7 +35,7 @@ public class TC006_MyOrdersTest extends BaseClass {
 			homePage.clickAccount();
 			ordersPage.clickMyOrders();
 			ordersPage.clickSeeDetails();
-
+			Thread.sleep(5000);
 			String orderId = ordersPage.getOrderId();
 			System.out.println("Order ID: " + orderId);
 
