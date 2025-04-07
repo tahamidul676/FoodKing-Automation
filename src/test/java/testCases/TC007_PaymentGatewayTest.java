@@ -30,7 +30,7 @@ public class TC007_PaymentGatewayTest extends BaseClass{
 		loginPage.setEmail(p.getProperty("email"));
 		loginPage.setPassword(p.getProperty("password"));
 		loginPage.clickLogin();
-		
+		Thread.sleep(5000);
 		//My Orders Page
 		MyOrdersPage ordersPage = new MyOrdersPage(driver);
 		homePage.clickAccount();
@@ -42,17 +42,18 @@ public class TC007_PaymentGatewayTest extends BaseClass{
 		PaymentGatewayPage paymentpage = new PaymentGatewayPage(driver);
 		
 		paymentpage.clickPayNow();
-		//Thread.sleep(7000);
+		
 		paymentpage.clickStripe();
-		//Thread.sleep(7000);
+		
 		paymentpage.enterCardDetails(
 			    p.getProperty("testCardNumber"), 
 			    p.getProperty("testExpiryDate"), 
 			    p.getProperty("testCVC")
 			);
-		Thread.sleep(7000);
+		//Thread.sleep(7000);
 		
 		paymentpage.clickConfirm(); // Confirm the payment
+		Thread.sleep(5000);
 		
 		} catch (Exception e) {
 

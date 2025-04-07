@@ -2,24 +2,27 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-04-06T17:07:30 GMT+06:00" name="Default suite" finished-at="2025-04-06T17:07:37 GMT+06:00" duration-ms="6488">
+  <suite started-at="2025-04-07T10:31:53 GMT+06:00" name="Default suite" finished-at="2025-04-07T10:32:08 GMT+06:00" duration-ms="15755">
     <groups>
+      <group name="EndToEnd">
+        <method signature="TC007_PaymentGatewayTest.payNow()[pri:0, instance:testCases.TC007_PaymentGatewayTest@63798ca7]" name="payNow" class="testCases.TC007_PaymentGatewayTest"/>
+      </group> <!-- EndToEnd -->
     </groups>
-    <test started-at="2025-04-06T17:07:30 GMT+06:00" name="Default test" finished-at="2025-04-06T17:07:37 GMT+06:00" duration-ms="6488">
-      <class name="testCases.TC012_DeletePOSOrdersTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:testCases.TC012_DeletePOSOrdersTest@79c7532f]" started-at="2025-04-06T17:07:30 GMT+06:00" name="setup" finished-at="2025-04-06T17:07:33 GMT+06:00" duration-ms="2865" status="PASS">
+    <test started-at="2025-04-07T10:31:53 GMT+06:00" name="Default test" finished-at="2025-04-07T10:32:08 GMT+06:00" duration-ms="15755">
+      <class name="testCases.TC007_PaymentGatewayTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:testCases.TC007_PaymentGatewayTest@63798ca7]" started-at="2025-04-07T10:31:53 GMT+06:00" name="setup" finished-at="2025-04-07T10:31:55 GMT+06:00" duration-ms="2454" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="deletePosOrders()[pri:0, instance:testCases.TC012_DeletePOSOrdersTest@79c7532f]" started-at="2025-04-06T17:07:33 GMT+06:00" name="deletePosOrders" finished-at="2025-04-06T17:07:36 GMT+06:00" duration-ms="3359" status="PASS">
+        <test-method signature="payNow()[pri:0, instance:testCases.TC007_PaymentGatewayTest@63798ca7]" started-at="2025-04-07T10:31:55 GMT+06:00" name="payNow" finished-at="2025-04-07T10:32:08 GMT+06:00" duration-ms="13082" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- deletePosOrders -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:testCases.TC012_DeletePOSOrdersTest@79c7532f]" started-at="2025-04-06T17:07:36 GMT+06:00" name="tearDown" finished-at="2025-04-06T17:07:37 GMT+06:00" duration-ms="235" status="PASS">
+        </test-method> <!-- payNow -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:testCases.TC007_PaymentGatewayTest@63798ca7]" started-at="2025-04-07T10:32:08 GMT+06:00" name="tearDown" finished-at="2025-04-07T10:32:08 GMT+06:00" duration-ms="184" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- testCases.TC012_DeletePOSOrdersTest -->
+      </class> <!-- testCases.TC007_PaymentGatewayTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

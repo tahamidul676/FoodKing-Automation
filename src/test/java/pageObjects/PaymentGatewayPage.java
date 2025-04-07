@@ -22,59 +22,57 @@ public class PaymentGatewayPage extends BasePage {
 
 	@FindBy(xpath = "//input[@id='stripe']")
 	WebElement selectStripe;
-
+	
+	
 	@FindBy(xpath = "//button[@id='confirmBtn']")
 	WebElement btnConfirm;
 
-	
 	// Wait object for explicit waits
-	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-	
+	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+
 	public void clickPayNow() {
 		wait.until(ExpectedConditions.elementToBeClickable(btnPayNow)).click();
-		//btnPayNow.click();
+		// btnPayNow.click();
 	}
 
 	public void clickStripe() {
 		selectStripe.click();
 	}
 
+	public void clickConfirm() {
 
-	// public void clickConfirm() {
+		wait.until(ExpectedConditions.elementToBeClickable(btnConfirm)).click();
 
-	// wait.until(ExpectedConditions.elementToBeClickable(btnConfirm)).click();
-	// }
+	}
 
-	
-	
 	// This isn't working as expected
 	// Updated clickConfirm() method with JavaScript click
-	
-	public void clickConfirm() {
-		try {
-			System.out.println("Trying to click Confirm button...");
 
-			// Wait for the button to be present in the DOM
-			wait.until(ExpectedConditions.presenceOfElementLocated(By.id("confirmBtn")));
-
-			// Wait for the button to be visible and clickable
-			wait.until(ExpectedConditions.visibilityOf(btnConfirm));
-			wait.until(ExpectedConditions.elementToBeClickable(btnConfirm));
-
-			// Scroll into view
-			JavascriptExecutor js = (JavascriptExecutor) driver;
-			js.executeScript("arguments[0].scrollIntoView({behavior: 'smooth', block: 'center'});", btnConfirm);
-			Thread.sleep(500);
-
-			// Click using JavaScript
-			js.executeScript("arguments[0].click();", btnConfirm);
-
-			System.out.println("Confirm button clicked successfully.");
-
-		} catch (Exception e) {
-			throw new RuntimeException("Failed to click Confirm button: " + e.getMessage());
-		}
-	}
+//	public void clickConfirm() {
+//		try {
+//			System.out.println("Trying to click Confirm button...");
+//
+//			// Wait for the button to be present in the DOM
+//			wait.until(ExpectedConditions.presenceOfElementLocated(By.id("confirmBtn")));
+//
+//			// Wait for the button to be visible and clickable
+//			wait.until(ExpectedConditions.visibilityOf(btnConfirm));
+//			wait.until(ExpectedConditions.elementToBeClickable(btnConfirm));
+//
+//			// Scroll into view
+//			JavascriptExecutor js = (JavascriptExecutor) driver;
+//			js.executeScript("arguments[0].scrollIntoView({behavior: 'smooth', block: 'center'});", btnConfirm);
+//			Thread.sleep(500);
+//
+//			// Click using JavaScript
+//			js.executeScript("arguments[0].click();", btnConfirm);
+//
+//			System.out.println("Confirm button clicked successfully.");
+//
+//		} catch (Exception e) {
+//			throw new RuntimeException("Failed to click Confirm button: " + e.getMessage());
+//		}
+//	}
 
 	// Method to dynamically switch to the Stripe iframe with Explicit Wait
 	public void switchToStripeIframe() {
