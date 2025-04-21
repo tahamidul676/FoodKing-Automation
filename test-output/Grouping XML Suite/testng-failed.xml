@@ -8,16 +8,27 @@
       </run>
     </groups>
     <classes>
-      <class name="testCases.TC002_LoginTest">
-        <methods>
-          <include name="login"/>
-        </methods>
-      </class> <!-- testCases.TC002_LoginTest -->
       <class name="testCases.TC005_ProceedToCheckoutTest">
         <methods>
+          <include name="tearDown"/>
+          <include name="setup"/>
           <include name="checkOut"/>
         </methods>
       </class> <!-- testCases.TC005_ProceedToCheckoutTest -->
+      <class name="testCases.TC007_PaymentGatewayTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="payNow"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- testCases.TC007_PaymentGatewayTest -->
+      <class name="testCases.TC006_MyOrdersTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="myOrders"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- testCases.TC006_MyOrdersTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Grouping XML Suite] -->

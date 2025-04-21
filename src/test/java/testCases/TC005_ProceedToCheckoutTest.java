@@ -37,7 +37,7 @@ public class TC005_ProceedToCheckoutTest extends BaseClass {
 			// Add Items To Cart Page
 			AddItemsToCartPage addCartPage = new AddItemsToCartPage(driver);
 			addCartPage.setSearch();
-			addCartPage.setInstructions(p.getProperty("addInstructions"));
+			//addCartPage.setInstructions(p.getProperty("addInstructions"));
 			addCartPage.clickAddToCart();
 
 			// Proceed To Checkout Page

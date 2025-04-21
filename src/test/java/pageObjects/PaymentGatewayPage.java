@@ -2,6 +2,7 @@ package pageObjects;
 
 import java.time.Duration;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -26,6 +27,9 @@ public class PaymentGatewayPage extends BasePage {
 	
 	@FindBy(xpath = "//button[@id='confirmBtn']")
 	WebElement btnConfirm;
+	
+	@FindBy(xpath = "/html[1]/body[1]/div[1]/div[1]/dl[1]/dd[1]")
+	WebElement getTransactionID;
 
 	// Wait object for explicit waits
 	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
@@ -102,5 +106,12 @@ public class PaymentGatewayPage extends BasePage {
 
 		switchToDefaultContent(); // Switch back to main content
 	}
+	
+	public String getTransactionID() {
+		return getTransactionID.getText();
+	}
+	
+	
+	
 
 }

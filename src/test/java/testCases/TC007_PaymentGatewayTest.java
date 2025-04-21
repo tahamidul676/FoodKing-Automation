@@ -35,6 +35,10 @@ public class TC007_PaymentGatewayTest extends BaseClass{
 		MyOrdersPage ordersPage = new MyOrdersPage(driver);
 		homePage.clickAccount();
 		ordersPage.clickMyOrders();
+		//Thread.sleep(2000);
+		//String orderId = p.getProperty("targetOrderId"); // add this to your properties file
+		//ordersPage.clickSeeDetailsForOrder(orderId);
+
 		ordersPage.clickSeeDetails();
 		
 		
@@ -53,7 +57,11 @@ public class TC007_PaymentGatewayTest extends BaseClass{
 		//Thread.sleep(7000);
 		
 		paymentpage.clickConfirm(); // Confirm the payment
-		Thread.sleep(5000);
+		Thread.sleep(3000);
+		
+		
+		String getID = paymentpage.getTransactionID();
+		System.out.println("Transaction ID: " +getID);
 		
 		} catch (Exception e) {
 

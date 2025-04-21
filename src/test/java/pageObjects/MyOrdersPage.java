@@ -1,7 +1,10 @@
 package pageObjects;
 
 import java.time.Duration;
+import java.util.List;
+import java.util.NoSuchElementException;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -16,6 +19,9 @@ public class MyOrdersPage extends BasePage {
 
 	@FindBy(xpath = "//body//div//header//div//div//nav//a[1]")
 	WebElement lnkMyOrders;
+
+	@FindBy(xpath = "//li//div[1]//div[1]//div[1]//p[1]")
+	WebElement matchedID;
 
 	@FindBy(xpath = "//a[normalize-space()='See Details']")
 	WebElement lnkSeeDetails;
@@ -37,7 +43,7 @@ public class MyOrdersPage extends BasePage {
 
 	public void clickSeeDetails() {
 		wait.until(ExpectedConditions.elementToBeClickable(lnkSeeDetails)).click();
-		
+
 	}
 
 	public String getOrderId() {
@@ -49,6 +55,28 @@ public class MyOrdersPage extends BasePage {
 	public String getOrderType() {
 		wait.until(ExpectedConditions.visibilityOf(getOrderType));
 		return getOrderType.getText();
+	}
+
+	// Search for OrderID
+	public void clickSeeDetailsForOrder(String targetOrderId) {
+		List<WebElement> orderBlocks = driver.findElements(By.xpath("//li"));
+
+		for (WebElement block : orderBlocks) {
+			try {
+				WebElement orderIdElement = block.findElement(By.xpath("//li//div[1]//div[1]//div[1]//p[1]"));//  .//div[1]//div[1]//div[1]//p[1]
+				String orderIdText = orderIdElement.getText().trim();
+
+				if (orderIdText.equals(targetOrderId)) {
+					WebElement seeDetailsBtn = block.findElement(By.xpath("//a[normalize-space()='See Details']"));
+					seeDetailsBtn.click();
+					return; // Exit once clicked
+				}
+			} catch (Exception e) {
+				System.out.println("Skipping block due to error: " + e.getMessage());
+			}
+		}
+
+		throw new NoSuchElementException("Order ID " + targetOrderId + " not found.");
 	}
 
 }
