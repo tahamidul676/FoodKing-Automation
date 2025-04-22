@@ -112,7 +112,7 @@ public class POSOrdersPage extends BasePage {
 		return getPhoneTxt.getText();
 	}
 
-	// Collected
+	// Edit POS Order
 	public void chooseNameToEdit(String orderID) {
 		List<WebElement> rows = driver.findElements(By.xpath("//tbody/tr"));
 

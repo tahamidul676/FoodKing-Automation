@@ -35,10 +35,10 @@ public class TC008_EditProfileTest extends BaseClass {
 			editProfile.clickEditProfile();
 			editProfile.setFirstName(p.getProperty("updateFirstName"));
 			editProfile.setLastName(p.getProperty("updateLastName"));
-			// editProfile.setEmail(p.getProperty("updateEmail"));
+			editProfile.setEmail(p.getProperty("updateEmail"));
 			Thread.sleep(5000);
 			editProfile.setPhone(p.getProperty("updatePhone"));
-			// editProfile.clickUpdateProfileBtn();
+			editProfile.clickUpdateProfileBtn();
 
 		} catch (Exception e) {
 

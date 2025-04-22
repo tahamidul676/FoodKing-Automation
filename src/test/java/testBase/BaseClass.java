@@ -41,7 +41,7 @@ public class BaseClass {
 		
 	//driver  = new ChromeDriver();
 	driver = new EdgeDriver();
-	//driver.manage().deleteAllCookies();
+	driver.manage().deleteAllCookies();
 	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 	driver.get(p.getProperty("Url")); // Reading URL from properties file
 	driver.manage().window().maximize();

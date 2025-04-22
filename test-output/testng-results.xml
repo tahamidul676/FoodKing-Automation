@@ -2,27 +2,24 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-04-21T18:14:49 GMT+06:00" name="Default suite" finished-at="2025-04-21T18:15:00 GMT+06:00" duration-ms="10726">
+  <suite started-at="2025-04-22T17:55:05 GMT+06:00" name="Default suite" finished-at="2025-04-22T17:55:18 GMT+06:00" duration-ms="13250">
     <groups>
-      <group name="EndToEnd">
-        <method signature="TC005_ProceedToCheckoutTest.checkOut()[pri:0, instance:testCases.TC005_ProceedToCheckoutTest@63798ca7]" name="checkOut" class="testCases.TC005_ProceedToCheckoutTest"/>
-      </group> <!-- EndToEnd -->
     </groups>
-    <test started-at="2025-04-21T18:14:49 GMT+06:00" name="Default test" finished-at="2025-04-21T18:15:00 GMT+06:00" duration-ms="10726">
-      <class name="testCases.TC005_ProceedToCheckoutTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:testCases.TC005_ProceedToCheckoutTest@63798ca7]" started-at="2025-04-21T18:14:49 GMT+06:00" name="setup" finished-at="2025-04-21T18:14:52 GMT+06:00" duration-ms="2769" status="PASS">
+    <test started-at="2025-04-22T17:55:05 GMT+06:00" name="Default test" finished-at="2025-04-22T17:55:18 GMT+06:00" duration-ms="13250">
+      <class name="testCases.TC011_POSOrdersTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:testCases.TC011_POSOrdersTest@79c7532f]" started-at="2025-04-22T17:55:05 GMT+06:00" name="setup" finished-at="2025-04-22T17:55:08 GMT+06:00" duration-ms="3092" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="checkOut()[pri:0, instance:testCases.TC005_ProceedToCheckoutTest@63798ca7]" started-at="2025-04-21T18:14:52 GMT+06:00" name="checkOut" finished-at="2025-04-21T18:14:58 GMT+06:00" duration-ms="6633" status="PASS">
+        <test-method signature="posOrders()[pri:0, instance:testCases.TC011_POSOrdersTest@79c7532f]" started-at="2025-04-22T17:55:08 GMT+06:00" name="posOrders" finished-at="2025-04-22T17:55:17 GMT+06:00" duration-ms="8876" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- checkOut -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:testCases.TC005_ProceedToCheckoutTest@63798ca7]" started-at="2025-04-21T18:14:58 GMT+06:00" name="tearDown" finished-at="2025-04-21T18:15:00 GMT+06:00" duration-ms="1292" status="PASS">
+        </test-method> <!-- posOrders -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:testCases.TC011_POSOrdersTest@79c7532f]" started-at="2025-04-22T17:55:17 GMT+06:00" name="tearDown" finished-at="2025-04-22T17:55:18 GMT+06:00" duration-ms="1241" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- testCases.TC005_ProceedToCheckoutTest -->
+      </class> <!-- testCases.TC011_POSOrdersTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

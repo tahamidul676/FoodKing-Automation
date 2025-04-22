@@ -49,34 +49,6 @@ public class PaymentGatewayPage extends BasePage {
 
 	}
 
-	// This isn't working as expected
-	// Updated clickConfirm() method with JavaScript click
-
-//	public void clickConfirm() {
-//		try {
-//			System.out.println("Trying to click Confirm button...");
-//
-//			// Wait for the button to be present in the DOM
-//			wait.until(ExpectedConditions.presenceOfElementLocated(By.id("confirmBtn")));
-//
-//			// Wait for the button to be visible and clickable
-//			wait.until(ExpectedConditions.visibilityOf(btnConfirm));
-//			wait.until(ExpectedConditions.elementToBeClickable(btnConfirm));
-//
-//			// Scroll into view
-//			JavascriptExecutor js = (JavascriptExecutor) driver;
-//			js.executeScript("arguments[0].scrollIntoView({behavior: 'smooth', block: 'center'});", btnConfirm);
-//			Thread.sleep(500);
-//
-//			// Click using JavaScript
-//			js.executeScript("arguments[0].click();", btnConfirm);
-//
-//			System.out.println("Confirm button clicked successfully.");
-//
-//		} catch (Exception e) {
-//			throw new RuntimeException("Failed to click Confirm button: " + e.getMessage());
-//		}
-//	}
 
 	// Method to dynamically switch to the Stripe iframe with Explicit Wait
 	public void switchToStripeIframe() {
