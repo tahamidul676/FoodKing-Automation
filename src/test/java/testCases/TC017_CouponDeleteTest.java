@@ -14,6 +14,8 @@ public class TC017_CouponDeleteTest extends BaseClass {
 	@Test()
 	public void deleteCoupons() {
 
+		logger.info("***** Starting TC017_CouponDeleteTest *****");
+
 		try {
 
 			// Home Page
@@ -36,11 +38,10 @@ public class TC017_CouponDeleteTest extends BaseClass {
 			CouponDeletePage couponDeletePage = new CouponDeletePage(driver);
 			couponDeletePage.chooseNameToDelete();
 			couponDeletePage.deleteBtn();
-			
+
 			// Assert
 			String expectedName = couponDeletePage.getNameTxt();
 			Assert.assertTrue(expectedName.toLowerCase().contains("auth-2026"));
-
 
 		} catch (Exception e) {
 			// Logs the exception for debugging
@@ -48,6 +49,8 @@ public class TC017_CouponDeleteTest extends BaseClass {
 			Assert.fail("Test failed due to an exception: " + e.getMessage());
 
 		}
+
+		logger.info("***** Finished TC017_CouponDeleteTest *****");
 	}
 
 }
