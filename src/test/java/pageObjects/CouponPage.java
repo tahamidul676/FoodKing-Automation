@@ -34,11 +34,12 @@ public class CouponPage extends BasePage {
 	@FindBy(xpath = "//input[@id=\"limit_per_user\"]")
 	WebElement txtLimitUser;
 
-	// -------------------------
-	// Coupon Menu Edit
+	// Coupon Edit
 	@FindBy(xpath = "//div[contains(normalize-space(), \"Auth-\")]")
 	WebElement getTxtNameCoupon;
-	// --------------------------
+	// Coupon Delete
+	@FindBy(xpath = "//button[normalize-space()=\"Yes, Delete it!\"]")
+	WebElement btnDelete;
 
 	// Dates
 	// Only Click Start Date
@@ -147,6 +148,7 @@ public class CouponPage extends BasePage {
 
 	}
 
+	// Edit
 	public void chooseNameToUpdate() {
 
 		String couponName = "Auth-2025"; // Coupon to search for
@@ -180,6 +182,39 @@ public class CouponPage extends BasePage {
 				ExpectedConditions.presenceOfElementLocated(By.xpath("//td[contains(normalize-space(), \"Auth-\")]")))
 				.getText();
 
+	}
+	
+	// Delete
+	public void chooseNameToDelete() {
+
+		String couponName = "Auth-2026"; // Coupon to search for
+		boolean couponFound = false;
+
+		// Locate all rows in the table
+		List<WebElement> rows = driver.findElements(By.xpath("//tbody/tr"));
+
+		for (WebElement row : rows) {
+			// Find the coupon name in each row
+			WebElement nameCell = row.findElement(By.xpath(".//td[1]")); // Adjust column index
+			if (nameCell.getText().equals(couponName)) {
+				couponFound = true;
+
+				// Click the "Delete" button in the same row
+				WebElement deleteButton = row.findElement(By.xpath(".//td[7]//button[2]"));
+				deleteButton.click();
+				// Exit loop after finding and editing the coupon
+				break;
+			}
+		}
+
+		if (!couponFound) {
+			System.out.println("Coupon not found!");
+		}
+
+	}
+	
+	public void deleteBtn() {
+		wait.until(ExpectedConditions.visibilityOf(btnDelete)).click();
 	}
 
 }
