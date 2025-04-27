@@ -3,7 +3,6 @@ package testCases;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pageObjects.CouponPage;
-import pageObjects.CouponsAddPage;
 import pageObjects.HomePage;
 import pageObjects.LoginPage;
 import testBase.BaseClass;
@@ -44,9 +43,8 @@ public class TC016_CouponsEditTest extends BaseClass {
 			// Assert.assertTrue(expectedName.toLowerCase().contains("Auth-"));
 
 		} catch (Exception e) {
-			// Logs exception for debugging
-			e.printStackTrace();
-			Assert.fail("Test failed due to an exception: " + e.getMessage());
+			logger.error("Test failed due to an exception", e);
+			Assert.fail("Test assertion failed due to an exception: " + e.getMessage());
 
 		}
 		logger.info("***** Finished TC016_CouponsEditTest *****");

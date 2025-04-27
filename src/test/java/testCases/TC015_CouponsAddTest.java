@@ -54,9 +54,9 @@ public class TC015_CouponsAddTest extends BaseClass {
 			Assert.assertTrue(expectedName.toLowerCase().contains("auth-2025"));
 
 		} catch (Exception e) {
-			// Logs exception for debugging
-			e.printStackTrace();
-			Assert.fail("Test failed due to an exception: " + e.getMessage());
+			
+			logger.error("Test failed due to an exception", e);
+			Assert.fail("Test assertion failed due to an exception: " + e.getMessage());
 		}
 		logger.info("***** Finished TC015_CouponsAddTest *****");
 	}

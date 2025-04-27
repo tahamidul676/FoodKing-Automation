@@ -1,23 +1,19 @@
 package testCases;
 
-import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
-import pageObjects.CouponDeletePage;
-import pageObjects.CouponsAddPage;
+import pageObjects.CouponPage;
 import pageObjects.HomePage;
 import pageObjects.LoginPage;
-import pageObjects.OffersAddPage;
-import pageObjects.OffersDeletePage;
-import pageObjects.OffersEditPage;
+import pageObjects.OffersPage;
 import testBase.BaseClass;
 
 public class TC020_OffersDeleteTest extends BaseClass {
 
-	
 	@Test()
 	public void offersDelete() {
+
+		logger.info("***** Starting TC020_OffersDeleteTest *****");
 
 		try {
 
@@ -33,35 +29,28 @@ public class TC020_OffersDeleteTest extends BaseClass {
 			homePage.clickAccount();
 			homePage.clickDashboard();
 
-			// Offers Add Page
-			OffersAddPage offersAddPage = new OffersAddPage(driver);
-			offersAddPage.clickOffers();
+			// Offers Page
+			OffersPage offersPage = new OffersPage(driver);
+			offersPage.clickOffers();
+			offersPage.chooseNameToDelete();
 
-			// Offers Delete Page
-			OffersDeletePage offersDeletePage = new OffersDeletePage(driver);
-			offersDeletePage.chooseNameToDelete();
-			
 			// Coupon Delete Page
-			CouponDeletePage couponDeletePage = new CouponDeletePage(driver);
-			couponDeletePage.deleteBtn();
-			
-			
+			CouponPage couponPage = new CouponPage(driver);
+			couponPage.deleteBtn();
+
 			// Assert
-			String expectedName = offersDeletePage.getNameTxt();
+			String expectedName = offersPage.getTextNameOfferEdit();
 			String originalItemName = "Offer-2026";
 			System.out.println("Extracted Text: " + expectedName);
 
-			
-			Assert.assertEquals(expectedName, originalItemName,"Item was deleted successfully"); 
-			
+			Assert.assertEquals(expectedName, originalItemName, "Item was deleted successfully");
 
-			
 		} catch (Exception e) {
-			// Logs the exception for debugging
-			e.printStackTrace();
-			Assert.fail("Test failed due to an exception: " + e.getMessage());
+			logger.error("Test failed due to an exception", e);
+			Assert.fail("Test assertion failed due to an exception: " + e.getMessage());
 
 		}
+		logger.info("***** Finished TC020_OffersDeleteTest *****");
 	}
 
 }

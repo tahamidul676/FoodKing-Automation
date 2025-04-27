@@ -2,24 +2,24 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-04-24T16:08:27 GMT+06:00" name="Default suite" finished-at="2025-04-24T16:08:45 GMT+06:00" duration-ms="17895">
+  <suite started-at="2025-04-27T12:20:33 GMT+06:00" name="Default suite" finished-at="2025-04-27T12:20:41 GMT+06:00" duration-ms="7481">
     <groups>
     </groups>
-    <test started-at="2025-04-24T16:08:27 GMT+06:00" name="Default test" finished-at="2025-04-24T16:08:45 GMT+06:00" duration-ms="17895">
-      <class name="testCases.TC013_OnlineOrdersTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:testCases.TC013_OnlineOrdersTest@79c7532f]" started-at="2025-04-24T16:08:27 GMT+06:00" name="setup" finished-at="2025-04-24T16:08:30 GMT+06:00" duration-ms="2787" status="PASS">
+    <test started-at="2025-04-27T12:20:33 GMT+06:00" name="Default test" finished-at="2025-04-27T12:20:41 GMT+06:00" duration-ms="7481">
+      <class name="testCases.TC020_OffersDeleteTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:testCases.TC020_OffersDeleteTest@79c7532f]" started-at="2025-04-27T12:20:33 GMT+06:00" name="setup" finished-at="2025-04-27T12:20:36 GMT+06:00" duration-ms="2486" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="onlineOrders()[pri:0, instance:testCases.TC013_OnlineOrdersTest@79c7532f]" started-at="2025-04-24T16:08:30 GMT+06:00" name="onlineOrders" finished-at="2025-04-24T16:08:44 GMT+06:00" duration-ms="13925" status="PASS">
+        <test-method signature="offersDelete()[pri:0, instance:testCases.TC020_OffersDeleteTest@79c7532f]" started-at="2025-04-27T12:20:36 GMT+06:00" name="offersDelete" finished-at="2025-04-27T12:20:39 GMT+06:00" duration-ms="3690" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- onlineOrders -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:testCases.TC013_OnlineOrdersTest@79c7532f]" started-at="2025-04-24T16:08:44 GMT+06:00" name="tearDown" finished-at="2025-04-24T16:08:45 GMT+06:00" duration-ms="1155" status="PASS">
+        </test-method> <!-- offersDelete -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:testCases.TC020_OffersDeleteTest@79c7532f]" started-at="2025-04-27T12:20:39 GMT+06:00" name="tearDown" finished-at="2025-04-27T12:20:41 GMT+06:00" duration-ms="1276" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- testCases.TC013_OnlineOrdersTest -->
+      </class> <!-- testCases.TC020_OffersDeleteTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

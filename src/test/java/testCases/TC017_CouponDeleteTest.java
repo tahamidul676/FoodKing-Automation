@@ -2,11 +2,7 @@ package testCases;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
-import pageObjects.CouponDeletePage;
 import pageObjects.CouponPage;
-import pageObjects.CouponsAddPage;
-import pageObjects.CouponsEditPage;
 import pageObjects.HomePage;
 import pageObjects.LoginPage;
 import testBase.BaseClass;
@@ -42,8 +38,8 @@ public class TC017_CouponDeleteTest extends BaseClass {
 			//Assert.assertTrue(expectedName.toLowerCase().contains("auth-2026"));
 
 		} catch (Exception e) {
-			e.printStackTrace();
-			Assert.fail("Test failed due to an exception: " + e.getMessage());
+			logger.error("Test failed due to an exception", e);
+			Assert.fail("Test assertion failed due to an exception: " + e.getMessage());
 
 		}
 
